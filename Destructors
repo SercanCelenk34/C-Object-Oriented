@@ -1,0 +1,49 @@
+//Author:Sercan:Celenk
+using Destructors;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Destructors
+{
+    class Rehber
+    {
+        int sayac;
+        public Rehber(int a)
+        {
+            sayac = a;
+        }
+        public void KisiEkle(int a)
+        {
+            Rehber oRehber = new Rehber(a);
+           
+        }
+        ~Rehber()
+        {
+            Console.WriteLine("{0} kisi bellekten silindi.", sayac);
+            Console.ReadLine();
+        }
+        
+    }
+   
+       
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Rehber oRehber = new Rehber(0);
+
+            for (int i = 1;  i < 100;i++)
+            {
+                oRehber.KisiEkle(i);
+            }
+            Console.WriteLine("Basariyla eklendi.");
+            
+        } 
+
+        }
+    
+}
